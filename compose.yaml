@@ -1,0 +1,15 @@
+services:
+  r2r_db:
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=read2redai'
+      - 'MYSQL_PASSWORD=secret'
+      - 'MYSQL_ROOT_PASSWORD=password'
+      - 'MYSQL_USER=admin'
+    ports:
+      - '3306:3306'
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 5600:8080
